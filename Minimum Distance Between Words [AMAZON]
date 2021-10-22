@@ -26,7 +26,7 @@ public class Hello {
 		}
 		String x=a[--n];
 		String y=a[--n];
-		int p=0,q=9999,m=999999;
+		int p=-99999,q=9999,m=999999;
 		for(int i=0;i<n;i++){
 		    if(a[i].equals(x)){
 		        p=i;
@@ -37,6 +37,10 @@ public class Hello {
 		    if(Math.abs(p-q)<m){
 		        m=Math.abs(p-q);
 		    }
+		}
+		if(m==0){
+		    System.out.println("1");
+		    return;
 		}
 		System.out.println(m);
 
