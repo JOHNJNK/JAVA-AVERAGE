@@ -1,0 +1,48 @@
+/*
+
+Given a number N, the program must print if N is a step number or not. (A step number is a number which has
+a digit which is either 1 more or 1 less than the previous digit).
+Input Format:
+The first line contains N.
+Output Format:
+The first line contains yes or no
+Boundary Conditions:
+10 <= N <= 99999999
+Example Input/Output 1:
+Input:
+1212343
+Output:
+yes
+Example Input/Output 2:
+Input:
+342345
+Output:
+no
+Explanation:
+The difference between 2 and 4 is NOT 1.
+
+
+*/
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Your Code Here
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int d=n%10;
+		n/=10;
+		while(n>0){
+		    if(Math.abs(d-(n%10))!=1){
+		        System.out.println("no");
+		        return;
+		    }
+		    d=n%10;
+		    n/=10;
+		}
+		System.out.println("yes");
+
+	}
+}
