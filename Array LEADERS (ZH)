@@ -1,0 +1,44 @@
+/*
+An array of N numbers is passed as input. The program must print all the LEADERS in the array. A number is a
+LEADER if it is greater than all the numbers to it's right.
+Note: The rightmost number is always a leader.
+Input Format:
+The first line contains N numbers, each separated by a space.
+Output Format:
+The first line contains the LEADERS, each separated by a space.
+Boundary Conditions:
+1 <= N <= 9999
+Example Input/Output 1:
+Input:
+10 17 4 3 5 2
+Output:
+17 5 2
+
+*/
+
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Your Code Here
+		Scanner sc=new Scanner(System.in);
+		int a[]=new int[10000];
+		int n=0,m=0,k=0;
+		while(sc.hasNext()){
+		    a[n++]=sc.nextInt();
+		}
+		int b[]=new int[n];
+		for(int i=n-1;i>=0;i--){
+		    if(a[i]>m){
+		        b[k++]=a[i];
+		        m=a[i];
+		    }
+		}
+		for(int i=k-1;i>=0;i--){
+		    System.out.print(b[i]+" ");
+		}
+
+	}
+}
