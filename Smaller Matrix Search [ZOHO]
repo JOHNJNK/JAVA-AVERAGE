@@ -1,0 +1,83 @@
+/*
+A bigger NxN matrix is passed as the input. Also a smaller MxM matrix is passed as input. The program must
+print TRUE if the smaller matrix can be found in the bigger matrix. Else the program must print FALSE.
+Input Format:
+First line will contain the value of N.
+Second line will contain the value of M.
+Next N lines will contain the values in the N*N matrix with each value separated by one or more space.
+Next M lines will contain the values in the M*M matrix with each value separated by one or more space.
+Output Format:
+First line will contain the string value TRUE or FALSE
+Boundary Conditions:
+3 <= N <= 20
+2 <= M <= N
+Example Input/Output 1:
+Input:
+3
+2
+4 5 9
+1 3 5
+8 2 4
+3 5
+2 4
+Output:
+TRUE
+Example Input/Output 2:
+Input:
+3
+2
+4 5 9
+1 3 5
+8 2 4
+4 5
+1 4
+
+Output:
+FALSE
+Max Exe
+
+*/
+
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Your Code Here
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int z=sc.nextInt();
+		int a[][]=new int[n][n];
+		int b[][]=new int[z][z];
+		for(int i=0;i<n;i++){
+		    for(int j=0;j<n;j++){
+		        a[i][j]=sc.nextInt();
+		    }
+		}
+		for(int i=0;i<z;i++){
+		    for(int j=0;j<z;j++){
+		        b[i][j]=sc.nextInt();
+		    }
+		}
+		for(int i=0;i<=n-z;i++){
+		    for(int j=0;j<=n-z;j++){
+		        int f=0;
+		        for(int x=i,p=0;x<i+z;x++,p++){
+		            for(int y=j,q=0;y<j+z;y++,q++){
+		                if(a[x][y]!=b[p][q]){
+		                    f=1;x=i+z;
+		                    break;
+		                }
+		            }
+		        }
+		        if(f==0){
+		            System.out.println("TRUE");
+		            return;
+		        }
+		    }
+		}
+		System.out.println("FALSE");
+
+	}
+}
